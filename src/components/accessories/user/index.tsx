@@ -4,13 +4,13 @@ interface user{
     organisation:string,
     username:string,
     email:string,
-    number:number,
+    numbers:number,
     date:string,
     status:string
 }
 
 function Users({users}) {
-    const {organisation,username,email,number,date,status}:user =users
+    const {organisation,username,email,numbers,date,status}:user =users
     useEffect(() => {
       console.log(date,username)
     }, [date,username])
@@ -35,7 +35,7 @@ function Users({users}) {
           </td>
           <td>
           <div className="user-table__data">
-            <span className="user-table-data__text">{number}</span>
+            <span className="user-table-data__text">{numbers}</span>
           </div>
           </td>
           <td>

@@ -182,6 +182,17 @@ body {
     color: #545f7dbb;
   }
 }
+.dashboard__pagination{
+  width: 189px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    .page-btn{
+      cursor: pointer;
+      padding:4px;
+    }
+}
 /*
 **
 **user table display styles
@@ -496,7 +507,7 @@ th {
     .details-heading__wrapper {
       display: flex;
       align-items: center;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
     .details__link {
       padding: 12px 3px;
