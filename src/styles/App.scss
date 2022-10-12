@@ -1,6 +1,42 @@
+$main-btn: #39cdcc;
+$pending: #e9b200;
+$active: #39cd62;
+$blacklisted: #e4033b;
+$pendinglight: #e9b20020;
+$activelight: #39cd6220;
+$blacklistedlight: #e4033b20;
+$secondarylight: #545f7d20;
+$secondary: #545f7d;
+$primary: #213f7d;
+$primarylight: #213f7d20;
+$pink: #df18ff;
+$pinklight: #e018ff20;
+$purple: #5618ff;
+$purplelight: #5618ff20;
+$orange: #f55f44;
+$orangelight: #f55f4420;
+$red: #ff3366;
+$redlight: #ff336620;
 
 @import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Work+Sans:wght@400&display=swap';
+/*
+**
+** user dashboard styles
+**
+*/
 @import "dashboard";
+/*
+**
+** user details styles
+**
+*/
+@import 'details';
+/*
+**
+**login styles
+**
+*/
+@import 'login';
 
 :root{
     font-size: 14px;

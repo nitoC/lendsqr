@@ -1,22 +1,3 @@
-$main-btn: #39cdcc;
-$pending: #e9b200;
-$active: #39cd62;
-$blacklisted: #e4033b;
-$pendinglight: #e9b20020;
-$activelight: #39cd6220;
-$blacklistedlight: #e4033b20;
-$secondarylight: #545f7d20;
-$secondary: #545f7d;
-$primary: #213f7d;
-$primarylight: #213f7d20;
-$pink: #df18ff;
-$pinklight: #e018ff20;
-$purple: #5618ff;
-$purplelight: #5618ff20;
-$orange: #f55f44;
-$orangelight: #f55f4420;
-$red: #ff3366;
-$redlight: #ff336620;
 
 * {
   padding: 0;
@@ -81,10 +62,12 @@ body {
     display: flex;
     align-items: center;
     .nav__avatar {
-      background: url("../../public/assets/images/jpg/avatar.jpg");
-      width: 48px;
-      aspect-ratio: 1/1;
-      border-radius: 100%;
+        img{
+          width: 48px;
+          aspect-ratio: 1/1;
+          border-radius: 100%;
+
+        }
     }
     .nav__text {
       padding: 0 8px;
@@ -217,9 +200,9 @@ body {
   padding: 30px;
   background-color: white;
   color: $secondary;
-  * {
-  }
+  position: relative;
 }
+
 .user-table-data__text{
   white-space: wrap;
   word-wrap: break-word;
@@ -341,6 +324,7 @@ th {
 }
 .dashboard-footer {
   display: flex;
+  position: relative;
   justify-content: space-between;
   padding: 20px 0px;
   color: $secondary;
@@ -373,9 +357,9 @@ th {
   border: 1px solid rgba(84, 95, 125, 0.14);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
-  position: fixed;
-  top: 0px;
-  left: 250px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
 .dropdown-input__wrapper {
   background-color: white;
@@ -462,135 +446,4 @@ th {
     padding: 0px 10px;
     cursor: pointer;
   }
-}
-/*
-**
-** user details styles
-**
-*/
-
-.user-details {
-  width: 100%;
-  padding: 50px;
-  .details-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .details-btn__wrapper {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      .details-btn {
-        width: 170px;
-        height: 40px;
-        border: none;
-        outline: none;
-        border-radius: 8px;
-        font-weight: bolder;
-      }
-      .details--blacklist {
-        color: $blacklisted;
-        border: 1px solid $blacklisted;
-      }
-      .details--activate {
-        color: $main-btn;
-        border: 1px solid $main-btn;
-      }
-    }
-  }
-  .user-back {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 8px;
-    .user-back__icon {
-      height: 25px;
-      width: 30.718673706054688px;
-      left: 1.875px;
-      top: 10.308517456054688px;
-      border-radius: 0px;
-    }
-    .user-back__text {
-      color: $secondary;
-    }
-  }
-  .details-heading {
-    width: 100%;
-    min-height: 210px;
-    left: 343px;
-    top: 290px;
-    background: #ffffff;
-    border: 1px solid rgba(33, 63, 125, 0.06);
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
-    padding: 15px 15px 0px 15px;
-    .details-heading__wrapper {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .details__link {
-      padding: 12px 3px;
-    }
-    .details-other__links {
-      display: flex;
-      gap: 70px;
-      flex-wrap: nowrap;
-    }
-    .details-nav__wrapper {
-      padding: 0px 15px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-  }
-  .details {
-    background: #ffffff;
-    border: 1px solid rgba(33, 63, 125, 0.06);
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
-    width: 100%;
-    margin-top: 40px;
-    .personal__header {
-      color: $primary;
-      font-weight: bold;
-      padding:15px;
-    }
-  }
-}
-.details__amount,
-.details__name {
-  font-weight: bolder;
-  color: $primary;
-  font-size: 18px;
-}
-.details-heading__wrapper,
-.details__identification,
-.details-tier,
-.details-loan {
-  padding: 25px;
-}
-.details-tier {
-  border-left: 1px solid $secondarylight;
-  border-right: 1px solid $secondarylight;
-}
-.details-tier__text {
-  color: $secondary;
-  font-weight: bold;
-}
-.details__id {
-  color: $secondary;
-}
-.details-account {
-  color: $primary;
-  font-size: 12px;
-}
-.details-tier-icon__wrapper,
-.details-account,
-.details__amount,
-.details__id,
-.details-tier__text,
-.details__name {
-  padding: 5px;
 }

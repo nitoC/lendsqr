@@ -1,11 +1,11 @@
 import React from "react";
 import Personal from "../accessories/details/index.tsx";
 
-function Details() {
+function Details({details, page}) {
   return (
     <div className="user-details">
       <div className="user-details__wrapper">
-        <div className="user-back">
+        <div onClick={()=> page("dashboard")} className="user-back">
           <div className="user-back-icon__wrapper">
             <img
               src="assets/icons/arrowback.svg"
@@ -79,7 +79,7 @@ function Details() {
           </div>
         </div>
       </div>
-      <Personal/>
+      <Personal details={details}/>
     </div>
   );
 }

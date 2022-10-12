@@ -1,0 +1,125 @@
+.user-details {
+    width: 100%;
+    padding: 50px;
+    .details-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .details-btn__wrapper {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        .details-btn {
+          width: 170px;
+          height: 40px;
+          border: none;
+          outline: none;
+          border-radius: 8px;
+          font-weight: bolder;
+        }
+        .details--blacklist {
+          color: $blacklisted;
+          border: 1px solid $blacklisted;
+        }
+        .details--activate {
+          color: $main-btn;
+          border: 1px solid $main-btn;
+        }
+      }
+    }
+    .user-back {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 8px;
+      .user-back__icon {
+        height: 25px;
+        width: 30.718673706054688px;
+        left: 1.875px;
+        top: 10.308517456054688px;
+        border-radius: 0px;
+      }
+      .user-back__text {
+        color: $secondary;
+      }
+    }
+    .details-heading {
+      width: 100%;
+      min-height: 210px;
+      left: 343px;
+      top: 290px;
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      padding: 15px 15px 0px 15px;
+      .details-heading__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .details__link {
+        padding: 12px 3px;
+      }
+      .details-other__links {
+        display: flex;
+        gap: 70px;
+        flex-wrap: nowrap;
+      }
+      .details-nav__wrapper {
+        padding: 0px 15px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+    .details {
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      width: 100%;
+      margin-top: 40px;
+      .personal__header {
+        color: $primary;
+        font-weight: bold;
+        padding:15px;
+      }
+    }
+  }
+  .details__amount,
+  .details__name {
+    font-weight: bolder;
+    color: $primary;
+    font-size: 18px;
+  }
+  .details-heading__wrapper,
+  .details__identification,
+  .details-tier,
+  .details-loan {
+    padding: 25px;
+  }
+  .details-tier {
+    border-left: 1px solid $secondarylight;
+    border-right: 1px solid $secondarylight;
+  }
+  .details-tier__text {
+    color: $secondary;
+    font-weight: bold;
+  }
+  .details__id {
+    color: $secondary;
+  }
+  .details-account {
+    color: $primary;
+    font-size: 12px;
+  }
+  .details-tier-icon__wrapper,
+  .details-account,
+  .details__amount,
+  .details__id,
+  .details-tier__text,
+  .details__name {
+    padding: 5px;
+  }

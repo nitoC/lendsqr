@@ -11,9 +11,9 @@ interface user{
     status:string
 }
 
-function Users({users}) {
+function Users({detail, page,handleDetails}) {
 
-    const {organisation,username,email,numbers,date,status}:user =users
+    const {organisation,username,email,numbers,date,status}:user =detail
     const [show, setshow] = useState(-10);
     const toggleShow = ()=>{
       if(show===-10) setshow(4)
@@ -57,8 +57,8 @@ function Users({users}) {
           </div>
           </td>
           <td>
-          <div className="user-table__data">
-            <span onClick={toggleShow} className="table-header-icon__wrapper">
+          <div onClick={toggleShow} className="user-table__data">
+            <span  className="table-header-icon__wrapper">
               <img
                 src="assets/icons/more_verti.svg"
                 alt="table icon"
@@ -67,7 +67,7 @@ function Users({users}) {
             </span>
           </div>
           </td>
-            <Moreverti zindex={show}/>
+            <Moreverti handleDetails={handleDetails} detail={detail} page={page} zindex={show}/>
         </tr>
       </>
   );

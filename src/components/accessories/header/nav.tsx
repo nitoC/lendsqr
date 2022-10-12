@@ -1,5 +1,5 @@
 import React from 'react';
-function Nav() {
+function Nav({user}) {
     return ( 
         <nav className="nav__container">
             <a href="" className="nav__link">Docs</a>
@@ -8,11 +8,11 @@ function Nav() {
             </button>
             <div className="nav__user-menu">
                 <div className="nav__avatar">
-
+                   <img src={user.profile.avatar} alt="" />
                 </div>
                 <button className="nav__icon-button">
                     <span className="nav__text">
-                        Adedeji
+                        {user.userName}
                     </span>
                     <img  src="assets/icons/user_menu.svg" alt="" className="nav__icon" />
                 </button>

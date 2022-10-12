@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './nav.tsx';
 import Search from './search.tsx';
-function Header() {
+function Header({user}) {
     return ( 
         <div className="header">
             <div className="logo">
@@ -11,7 +11,7 @@ function Header() {
                 <Search/>
             </div>
             <nav className="nav">
-                <Nav/>
+                <Nav user={user}/>
             </nav>
         </div>
      );

@@ -1,34 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import Card from "../accessories/card/index.tsx";
+import FilterModal from "../accessories/modal/filteruser/index.tsx";
 import Users from "../accessories/user/index.tsx";
 
-function Dashboard({ users }) {
+function Dashboard({ users, page, handleDetails }) {
   const [data, setdata] = useState([]);
+  const [filter, setfilter] = useState(-10);
   let arr = users;
   //pagination
   const value = useRef(0);
   const endvalue = useRef(9);
   let num = 9;
   const [pagination, setpagination] = useState({
-    multiple: 1,
-    btncount: Math.ceil(arr.length / num),
-    end: endvalue.current,
-    start: value.current,
-  });
-  const [pages, setpages] = useState(
-    arr.slice(pagination.start, pagination.end)
-  );
-  //this function gives functionality to the pagination buttons
-  const pagin = (type: any) => {
-    if (type === "prev" && pagination.start > 0) {
-      value.current = value.current - num;
-      console.log(value.current);
-      setpagination({
-        ...pagination,
-        end: pagination.end - 9,
-        start: value.current,
-        multiple: pagination.multiple - 1,
+     multiple: 1,
+     btncount: Math.ceil(arr.length / num),
+     end: endvalue.current,
+     start: value.current,
+   });
+   const [pages, setpages] = useState(
+      arr.slice(pagination.start, pagination.end)
+      );
+
+
+      const toggleFilter = ()=>{
+        if(filter===-10) setfilter(4)
+        if(filter===4) setfilter(-10)
+      }
+      //this function gives functionality to the pagination buttons
+      const pagin = (type: any) => {
+         if (type === "prev" && pagination.start > 0) {
+            value.current = value.current - num;
+            console.log(value.current);
+            setpagination({
+               ...pagination,
+               end: pagination.end - 9,
+               start: value.current,
+               multiple: pagination.multiple - 1,
       });
     }
     if (type === "next" && pagination.end < 0) {
@@ -63,7 +71,7 @@ function Dashboard({ users }) {
         numbers: a.phoneNumber,
         status: "blacklisted",
         email: a.email,
-        date: new Date(a.createdAt).toUTCString,
+        date: new Date(a.createdAt).toUTCString(),
       };
     });
     setpages(arr.slice(pagination.start, pagination.end));
@@ -80,6 +88,7 @@ function Dashboard({ users }) {
           <Card />
         </div>
         <div className="user-table">
+          <FilterModal zindex={filter}/>
           <table className="user-display__table">
             <tr>
               <th className="user-table__header">
@@ -159,15 +168,14 @@ function Dashboard({ users }) {
               </th>
             </tr>
             {data.map((a, b) => {
-              console.log(a, "here", b, "  index");
-              return <Users key={b} users={a} />;
+              return <Users handleDetails={handleDetails} detail={a} page={page} key={b} />;
             })}
           </table>
         </div>
         <div className="dashboard-footer">
           <div className="filter">
             <div className="filter__txt">showing</div>
-            <div className="filter__btn">
+            <div onClick={toggleFilter} className="filter__btn">
               100
               <span className="filter-icon__container">
                 <img
@@ -176,8 +184,9 @@ function Dashboard({ users }) {
                   className="dashboard__icon"
                 />
               </span>
+           
             </div>
-            <div className="filter__txt">out of 100</div>
+            <div className="filter__txt">out of {users.length}</div>
           </div>
           <div className="dashboard__pagination">
             <span className="page-btn" onClick={() => pagin("prev")}>
