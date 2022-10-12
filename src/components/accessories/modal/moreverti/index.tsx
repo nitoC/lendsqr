@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Moreverti() {
+function Moreverti({zindex}) {
     return ( 
-        <div className="more-wrapper">
+        <div style={{zIndex:zindex}} className="more-wrapper">
             <div className="more__item">
                 <div className="more-icon__wrapper">
                     <img src="assets/icons/view.svg" alt="" className="more__icon" />

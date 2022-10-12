@@ -220,6 +220,13 @@ body {
   * {
   }
 }
+.user-table-data__text{
+  white-space: wrap;
+  word-wrap: break-word;
+  display: block;
+  width:100px;
+  overflow-x:auto;
+}
 .user-table-data--rounded {
   padding: 5px 10px;
 }
@@ -237,34 +244,46 @@ body {
   background-color: $blacklistedlight;
   color: $blacklisted;
   border-radius: 100px;
-  .user-table-data--rounded {
-    padding: 5px 10px;
-    font-size: 10px;
-  }
 }
 .user-table__data--pending {
   background-color: $pendinglight;
   color: $pending;
   border-radius: 100px;
 }
+
 /*change later*/
 td {
   text-align: start;
   padding: 15px 7px;
   border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: wrap;
+  word-wrap: break-word;
 }
 
 tr:last-of-type td {
+  .table-header-text__wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+  }
   border: none;
+}
+tr{
+  position: relative;
 }
 /*change later*/
 th {
   text-align: start;
   padding: 15px 7px;
   font-weight: 600px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .table-header-icon__wrapper {
   padding-left: 5px;
+  position: relative;
+  overflow: hidden;
 }
 
 .stat-card-wrapper {
@@ -420,12 +439,12 @@ th {
   border: none;
 }
 .more-wrapper {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 100px;
+  top: -65px;
   right: 20px;
   width: 180px;
   height: 130px;
@@ -441,6 +460,7 @@ th {
   cursor: pointer;
   .more-icon__wrapper {
     padding: 0px 10px;
+    cursor: pointer;
   }
 }
 /*

@@ -31,7 +31,7 @@ function Dashboard({ users }) {
         multiple: pagination.multiple - 1,
       });
     }
-    if (type === "next" && pagination.end < pagination.btncount) {
+    if (type === "next" && pagination.end < 0) {
       value.current = pagination.end;
       console.log(pagination.start);
       setpagination({
