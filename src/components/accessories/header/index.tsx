@@ -13,6 +13,9 @@ function Header({user}) {
             <nav className="nav">
                 <Nav user={user}/>
             </nav>
+            <div className="nav__moreverti">
+                <img src="assets/icons/more_verti.svg" alt="" className="nav-moreverti__btn" />
+            </div>
         </div>
      );
 }

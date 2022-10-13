@@ -11,7 +11,7 @@ interface user{
     status:string
 }
 
-function Users({detail, page,handleDetails,data}) {
+function Mobileusers({detail, page,handleDetails,data}) {
     console.log(data,'more verti')
     const {organisation,username,email,numbers,date,status}:user =detail
     const [show, setshow] = useState(-10);
@@ -21,30 +21,10 @@ function Users({detail, page,handleDetails,data}) {
     }
   return (
     <>
-        <tr className="user-table__wrapper">
-          <td>
-          <div className="user-table__data">
-            <span className="user-table-data__text">{organisation}</span>
-          </div>
-          </td>
+        <tr className="m-user-table__wrapper">
           <td>
           <div className="user-table__data">
             <span className="user-table-data__text">{username}</span>
-          </div>
-          </td>
-          <td>
-          <div className="user-table__data">
-            <span className="user-table-data__text">{email}</span>
-          </div>
-          </td>
-          <td>
-          <div className="user-table__data">
-            <span className="user-table-data__text">{numbers}</span>
-          </div>
-          </td>
-          <td>
-          <div className="user-table__data">
-            <span className="user-table-data__text">{date}</span>
           </div>
           </td>
           <td>
@@ -71,4 +51,4 @@ function Users({detail, page,handleDetails,data}) {
   );
 }
 
-export default Users;
+export default Mobileusers;

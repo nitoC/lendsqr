@@ -17,8 +17,9 @@ function App() {
     setpage(val);
   };
   const handleDetails = (val) => {
-    setpage('details')
+    console.log("page detail handle");
     setdetails(val);
+    setpage('details')
   };
   const login = (val) => {
     console.log("logging");
@@ -43,7 +44,7 @@ function App() {
   }, []);
   //fetch users data from mock api
   return (
-    <div className="App">
+    <div className="myApp">
       {page === "login" && (
         <Login page={handlePage} users={payload} auth={login} />
       )}
@@ -57,13 +58,15 @@ function App() {
         </>
       )}
        {page === "details" && (
+         <>
+         <Header user={user} />
+        <main className="main">
+        <SideBar />
             <Details details={details} page={handlePage}/>
+            </main>
+        </>
       )}
 
-      {/*
-       
-     
-       */}
     </div>
   );
 }

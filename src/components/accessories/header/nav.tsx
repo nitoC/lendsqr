@@ -17,6 +17,7 @@ function Nav({user}) {
                     <img  src="assets/icons/user_menu.svg" alt="" className="nav__icon" />
                 </button>
             </div>
+           
         </nav>
      );
 }

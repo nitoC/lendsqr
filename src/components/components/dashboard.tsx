@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Card from "../accessories/card/index.tsx";
 import FilterModal from "../accessories/modal/filteruser/index.tsx";
 import Users from "../accessories/user/index.tsx";
+import Mobileusers from "../accessories/user/mobileuser.tsx";
 
 function Dashboard({ users, page, handleDetails }) {
   const [data, setdata] = useState([]);
@@ -69,16 +70,14 @@ function Dashboard({ users, page, handleDetails }) {
         username: a.userName,
         // eslint-disable-next-line no-octal
         numbers: a.phoneNumber,
-        status: "blacklisted",
+        status: "pending",
         email: a.email,
         date: new Date(a.createdAt).toUTCString(),
       };
     });
     setpages(arr.slice(pagination.start, pagination.end));
     setdata(data);
-  }, [arr, pages, pagination.end, pagination.start]);
-
-  console.log(pages, " gg ");
+  }, [arr]);
 
   return (
     <div className="dashboard-container">
@@ -168,7 +167,38 @@ function Dashboard({ users, page, handleDetails }) {
               </th>
             </tr>
             {data.map((a, b) => {
-              return <Users handleDetails={handleDetails} detail={a} page={page} key={b} />;
+              return <Users handleDetails={handleDetails} data={pages[b]} detail={a} page={page} key={b} />;
+            })}
+          </table>
+          <table className="m-user-display__table">
+            <tr>
+              <th className="user-table__header">
+                <div className="table-header-text__wrapper">
+                  <span className="table-header-text">USERNAME</span>
+                  <span className="table-header-icon__wrapper">
+                    <img
+                      src="assets/icons/table_header_icon.svg"
+                      alt="table icon"
+                      className="table-header-icon__image"
+                    />
+                  </span>
+                </div>
+              </th>
+              <th colSpan={2} className="user-table__header">
+                <div className="table-header-text__wrapper">
+                  <span className="table-header-text">STATUS</span>
+                  <span className="table-header-icon__wrapper">
+                    <img
+                      src="assets/icons/table_header_icon.svg"
+                      alt="table icon"
+                      className="table-header-icon__image"
+                    />
+                  </span>
+                </div>
+              </th>
+            </tr>
+            {data.map((a, b) => {
+              return <Mobileusers handleDetails={handleDetails} data={pages[b]} detail={a} page={page} key={b} />;
             })}
           </table>
         </div>
