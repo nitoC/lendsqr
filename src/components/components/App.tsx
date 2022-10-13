@@ -3,7 +3,7 @@ import Header from "../accessories/header/index.tsx";
 import SideBar from "../accessories/sidebar/index.tsx";
 import Dashboard from "./dashboard.tsx";
 import Details from "./details.tsx";
-import { useEffect, useState, memo } from "react";
+import { useEffect, useState} from "react";
 import Login from "./login.tsx";
 
 function App() {
