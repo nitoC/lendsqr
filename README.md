@@ -18,6 +18,7 @@ yarn start
  ```
 run yarn start to start up the development server.
 log in using any email from the mock API provided( no password is required ). 
+Make sure you have a valid internet connection.
 
 # issues
 Do not use the last two buttons with the higher number values (the next button works perfectly and can be used) of the pagination. it is still in development. doing this will mess up your table layout.
