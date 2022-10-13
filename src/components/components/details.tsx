@@ -1,5 +1,4 @@
 import React from "react";
-import Personal from "../accessories/details/index.tsx";
 
 function Details({ details, page }) {
   console.log(details,"ingor");
