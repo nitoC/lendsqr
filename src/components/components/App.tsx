@@ -1,10 +1,10 @@
-import "./styles/App.scss";
-import Header from "./components/accessories/header/index.tsx";
-import SideBar from "./components/accessories/sidebar/index.tsx";
-import Dashboard from "./components/components/dashboard.tsx";
-import Details from "./components/components/details.tsx";
+import "../../styles/App.scss";
+import Header from "../accessories/header/index.tsx";
+import SideBar from "../accessories/sidebar/index.tsx";
+import Dashboard from "./dashboard.tsx";
+import Details from "./details.tsx";
 import { useEffect, useState, memo } from "react";
-import Login from "./components/components/login.tsx";
+import Login from "./login.tsx";
 
 function App() {
   const [payload, setpayload] = useState([]);
