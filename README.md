@@ -13,7 +13,9 @@ yarn install
 
 ## Usage
 
-```javascript node
+```bash
+yarn start
+ ```
 run yarn start to start up the development server.
 log in using any email from the mock API provided( no password is required ). 
 
