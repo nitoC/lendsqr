@@ -12,8 +12,7 @@ interface user{
 }
 
 function Mobileusers({detail, page,handleDetails,data}) {
-    console.log(data,'more verti')
-    const {organisation,username,email,numbers,date,status}:user =detail
+    const {username,status}:user =detail
     const [show, setshow] = useState(-10);
     const toggleShow = ()=>{
       if(show===-10) setshow(4)

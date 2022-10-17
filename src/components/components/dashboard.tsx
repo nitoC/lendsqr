@@ -7,53 +7,53 @@ import Mobileusers from "../accessories/user/mobileuser.tsx";
 
 function Dashboard({ users, page, handleDetails }) {
   const [data, setdata] = useState([]);
-  const [filter, setfilter] = useState(-10);
+  const [filter, setfilter] = useState({
+    zIndex:-10,
+    transform: `scale(${0})`,
+    transition:'.5s'
+  });
   let arr = users;
   //pagination
   const value = useRef(0);
   const endvalue = useRef(9);
   let num = 9;
   const [pagination, setpagination] = useState({
-     multiple: 1,
-     btncount: Math.ceil(arr.length / num),
-     end: endvalue.current,
-     start: value.current,
-   });
-   const [pages, setpages] = useState(
-      arr.slice(pagination.start, pagination.end)
-      );
-
-
+    multiple: 1,
+    btncount: Math.ceil(arr.length / num),
+    end: endvalue.current,
+    start: value.current,
+  });
+  const pages = arr.slice(pagination.start, pagination.end)
+      //
+      // toggle filter modal using z-index
       const toggleFilter = ()=>{
-        if(filter===-10) setfilter(4)
-        if(filter===4) setfilter(-10)
+        if(filter.zIndex===-10) setfilter( {zIndex:4, transform: `scale(${1})`})
+        if(filter.zIndex===4) setfilter( {zIndex:-10,transform: `scale(${0})`})
       }
+      //
       //this function gives functionality to the pagination buttons
       const pagin = (type: any) => {
          if (type === "prev" && pagination.start > 0) {
             value.current = value.current - num;
-            console.log(value.current);
             setpagination({
                ...pagination,
                end: pagination.end - 9,
                start: value.current,
-               multiple: pagination.multiple - 1,
+               multiple: pagination.multiple - 1>=pagination.btncount-1?pagination.multiple: pagination.multiple - 1,
       });
     }
-    if (type === "next" && pagination.end < 0) {
+    if (type === "next" && pagination.end < users.length-1) {
       value.current = pagination.end;
-      console.log(pagination.start);
       setpagination({
         ...pagination,
         start: value.current,
         end: pagination.end + 9,
-        multiple: pagination.multiple + 1,
+        multiple: pagination.btncount-1<=pagination.multiple+1?pagination.multiple: pagination.multiple + 1,
       });
     }
 
     if (typeof type == "number") {
-      value.current = type * num - num;
-      console.log(pagination.start);
+      value.current = (type * num) - num;
       setpagination({
         ...pagination,
         start: value.current,
@@ -61,6 +61,8 @@ function Dashboard({ users, page, handleDetails }) {
         multiple: type>=pagination.btncount-1?pagination.multiple:type,
       });
     }
+    console.log(pagination.start , " start")
+    console.log(pagination.end, " end")
   };
   //pagination
   useEffect(() => {
@@ -75,9 +77,8 @@ function Dashboard({ users, page, handleDetails }) {
         date: new Date(a.createdAt).toUTCString(),
       };
     });
-    setpages(arr.slice(pagination.start, pagination.end));
     setdata(data);
-  }, [arr]);
+  }, [arr, pagination.start, pagination.end]);
 
   return (
     <div className="dashboard-container">

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React from "react";
+import { useState, memo } from "react";
 import Moreverti from "../modal/moreverti/index.tsx";
 
 interface user{
@@ -11,7 +12,6 @@ interface user{
 }
 
 function Users({detail, page,handleDetails,data}) {
-    console.log(data,'more verti')
     const {organisation,username,email,numbers,date,status}:user =detail
     const [show, setshow] = useState(-10);
     const toggleShow = ()=>{
@@ -70,4 +70,4 @@ function Users({detail, page,handleDetails,data}) {
   );
 }
 
-export default Users;
+export default memo(Users);

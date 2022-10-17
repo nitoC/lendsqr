@@ -5,7 +5,7 @@ import Input from './input.tsx';
 
 function FilterModal({zindex}) {
     return (  
-        <div style={{zIndex:zindex}} className="filter-modal">
+        <div style={zindex} className="filter-modal">
             <div className="filter-modal__wrapper">
             <DropdownInput label="Organisation" placeholder="Select" icon="arrowdown"/>
             <Input type="text" label="Username"/>

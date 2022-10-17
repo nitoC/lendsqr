@@ -1,5 +1,9 @@
+@import 'http://fonts.cdnfonts.com/css/avenir-next-cyr';
+
+
 .login__wrapper{
     width:100%;
+    font-family: 'Avenir Next Cyr', sans-serif;
 }
 
 .login-header{
@@ -23,6 +27,7 @@
   display: flex;
   height: 100vh;
   background-color: white;
+  gap:5rem;
     .login__svg{
       width:50%;
       background-image: url("../../public/assets/images/svg/auth.svg");
@@ -31,21 +36,21 @@
       background-position: center;
     }
     .login__form{
-      width:40%;
-      padding:50px;
+      width:27.93rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap:10px;
       .login__header{
         padding:5px 0px;
-        font-size: 40px;
+        font-size: 2.5rem;
         font-weight: bolder;
         color:$primary;
       }
       .login__subheader{
         padding:5px 0px;
-        font-size: 15px;
+        font-size: 1.25rem;
+        font-weight: 400;
         color:$secondary;
       }
       .login-forgot__text{
@@ -58,11 +63,15 @@
       border-radius: 5px;
       .login__input{
         border:none;
-        height: max(30, 3.3vw);
+        height: 3.125rem;
         width:80%;
-        padding: 16px;
+        padding: 1rem;
         color:$secondary;
         outline: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 19px;
       }
     }
     .login__btn{
@@ -73,13 +82,14 @@
       outline: none;
       background-color: $main-btn;
       border-radius: 8px;
-      height: max(45px,3.3vw);
+      height: 3.125rem;
       width:100%;
   
     }
     .login__text{
       color:$main-btn;
-      font-weight: bolder;
+      font-size: 0.75;
+      font-weight: 600;
     }
     .form{
       display: flex;
@@ -94,7 +104,8 @@
             }
             .login__form{
             margin: auto;
-            width:max(80%,600px);
+            padding: 1rem;
+            width:max(80%,400px);
            }
 
      }  

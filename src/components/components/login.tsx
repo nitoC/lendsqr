@@ -23,7 +23,11 @@ function Login({users, page, auth}) {
     }
     const handleSubmit = (e)=>{
             e.preventDefault()
+            console.log(users,'users')
+            console.log(typeof login.email)
+            console.log(typeof users[1].email)
         let result = users.filter(a=> a.email===login.email)
+        console.log(result, 'logg')
         if(result[0]){
             page('dashboard')
             auth(result[0])
