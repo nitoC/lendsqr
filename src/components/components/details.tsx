@@ -17,12 +17,12 @@ function Details({ details, page }) {
           <div className="user-back__text">Back to Users</div>
         </div>
         <div className="details-header">
-          <div className="user__header">Users</div>
+          <div className="user__header">User Details</div>
           <div className="details-btn__wrapper">
             <button className="details-btn details--blacklist">
-              Blacklist
+              Blacklist User
             </button>
-            <button className="details-btn details--activate">Activate</button>
+            <button className="details-btn details--activate">Activate User</button>
           </div>
         </div>
         <div className="details-heading">
