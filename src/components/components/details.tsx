@@ -1,8 +1,6 @@
 import React from "react";
 
 function Details({ details, page }) {
-  console.log(details,"ingor");
-  
   return (
     <div className="user-details">
       <div className="user-details__wrapper">
