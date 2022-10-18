@@ -241,6 +241,21 @@ function SideBar() {
               </span>
               <span className="dashboard__text">Audit Logs</span>
             </div>
+            <div className="dashboard__link">
+             <span className="dashboard-icon__container">
+                <img
+                  src="assets/icons/logout.svg"
+                  alt=""
+                  className="dashboard__icon"
+                />
+              </span>
+              <span className="dashboard__text"></span>
+            </div>
+            <div className="dashboard__logout-text">
+              <div className="dashboard__text">
+                Logout
+              </div>
+            </div>
           </div>
         </div>
       </div>

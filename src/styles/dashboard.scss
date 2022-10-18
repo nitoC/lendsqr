@@ -139,6 +139,13 @@ body {
     line-height: 19px;
     color: $primary;
   }
+  .dashboard__logout-text{
+    padding: 1.25rem 3.4375rem;
+    border-top: 1px solid $primarylight;
+    .dashboard__text{
+      color:$primary;
+    }
+  }
   .dashboard-container{
     position: relative;
      z-index: 0; 

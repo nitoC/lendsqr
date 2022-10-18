@@ -27,8 +27,8 @@ function Dashboard({ users, page, handleDetails }) {
       //
       // toggle filter modal using z-index
       const toggleFilter = ()=>{
-        if(filter.zIndex===-10) setfilter( {zIndex:4, transform: `scale(${1})`})
-        if(filter.zIndex===4) setfilter( {zIndex:-10,transform: `scale(${0})`})
+        if(filter.zIndex===-10) setfilter( {zIndex:4, transform: `scale(${1})`,transition:'.01s'})
+        if(filter.zIndex===4) setfilter( {zIndex:-10,transform: `scale(${0})`,transition:'.01s'})
       }
       //
       //this function gives functionality to the pagination buttons
